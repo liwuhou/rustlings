@@ -27,6 +27,7 @@ fn abs_all<'a, 'b>(input: &'a mut Cow<'b, [i32]>) -> &'a mut Cow<'b, [i32]> {
 
 #[cfg(test)]
 mod tests {
+    // Cow::from Clone on write, 当 Cow 调用 to_mut 的时候，会夺取数据的所有权
     use super::*;
 
     #[test]
